@@ -1,4 +1,9 @@
 import { Component, VERSION } from '@angular/core';
+import { UselessFactsApiService } from './uselessfacts-api.service';
+
+interface UselessFacts {
+  reference: string;
+}
 
 @Component({
   selector: 'my-app',
@@ -9,6 +14,7 @@ export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   clockdata = ""
   clockHandle;
+  response: UselessFacts;
  
 
   ngOnInit(){
@@ -16,4 +22,6 @@ export class AppComponent  {
       this.clockdata = new Date().toLocaleString();
     }, 1000);
   }
+
+ 
 }
